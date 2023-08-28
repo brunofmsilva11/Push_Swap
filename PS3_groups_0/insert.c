@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:58:11 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/25 01:14:38 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 01:18:24 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,30 @@ void    insert_top(t_node **lista, int num){
 }
 
 //inserir num no fim da lista
-void    insert_end(t_node **lista, int num){
+void    insert_end(t_node **lista, int num) {
     t_node *new = malloc(sizeof(t_node));
-    t_node *aux = malloc(sizeof(t_node));
-    
-    if(new){
+
+    if (new) {
         new->value = num;
         new->next = NULL;
 
-        //verificar se e o primeiro value da lista
-        if(*lista == NULL)
+        // Verificar se é o primeiro valor da lista
+        if (*lista == NULL) {
             *lista = new;
-        else{
-            aux = *lista;
-            while(aux->next != NULL)
+        }
+        else 
+        {
+            t_node *aux = *lista;
+            while (aux->next != NULL) {
                 aux = aux->next;
+            }
             aux->next = new;
         }
-
-    }
-    else
+    } else {
         printf("Erro a alocar memoria!\n");
+    }
 }
+
 
 //inserir num no meio da lista
 void    insert_mid(t_node **lista, int num, int pre){

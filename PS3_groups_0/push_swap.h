@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:58:55 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/25 02:03:21 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 00:56:43 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
+# include <limits.h>
+# include "libft/libft.h"
 
 typedef struct s_node{
     int value;
@@ -28,6 +29,7 @@ typedef struct s_utils
 {
 	t_node *listA;
 	t_node *listB;
+	int *array;
 	int max_bits;
 	int max;
 	int min;
@@ -105,22 +107,6 @@ int    	get_distance(t_utils *stack);
 //lstsize.c
 int    lstsize(t_node *t_node);
 
-//sort.c
-t_utils	*setup_utils(t_node **listA, t_node **listB);
-void	check_best_min_max(t_node *t_node_a, t_node *t_node_b, t_utils *utils);
-void	check_best_default_2(t_utils *utils, int mov, int i, t_node *t_node_a);
-void	check_best_default(t_node *t_node_a, t_node *t_node_b, t_utils *utils);
-void	check_best_move_2(t_node **listA, t_node **listB, t_utils *utils);
-void	check_best_move(t_node **listA, t_node **listB);
-void	sort_end(t_node **listA);
-void	sort_big(t_node **listA, t_node **listB);
-
-//prepare_push.c
-void	rotate_min_max(t_node **listB, t_utils *utils);
-void	rotate_default(t_node **listA, t_node **listB, t_utils *utils);
-void	prepare_to_push_2(t_node **listA, t_utils *utils, int i);
-void	prepare_to_push(t_node **listA, t_node **listB, t_utils *utils);
-
 /*array.c*/
 void    swap2(int *a, int *b);
 void    ordenar(int *array, t_utils *stack);
@@ -128,5 +114,7 @@ void    print_array(int *array);
 
 //utils.c
 void    init_stack(t_utils *stack);
+int		check_if_numbers(char **av, int len);
+int		check_doubles(t_node *list);
 
 #endif

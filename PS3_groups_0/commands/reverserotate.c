@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:03:27 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/25 01:18:20 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 01:12:30 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void    reverse_rotate(t_node **node)
     tmp = aux->value;
     insert_top(node, tmp);
     remove_node(node, tmp);
+    //free(aux);
 }
 
 void    rra(t_utils *stack)
@@ -59,5 +60,5 @@ void    remove_node(t_node **node, int num)
         remove = aux->next;
         aux->next = remove->next;
     }
-    //return (remove);
+    free(remove);
 }

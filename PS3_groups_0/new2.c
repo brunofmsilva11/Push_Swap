@@ -343,6 +343,7 @@ void    index3(t_utils *stack)
     get_min(stack);
     get_max(stack);//Obtenho o max para depois calcular o max_bits para saber em que bit posso parar.
     ft_alg2(stack);
+    free(array);
     //ft_alg(stack);
     /* while(!is_sorted(&tmp))
     {
@@ -362,6 +363,15 @@ void    index3(t_utils *stack)
     } */
 }
 
+void free_list(t_node *list)
+{
+    while (list != NULL) {
+        t_node *temp = list;
+        list = list->next;
+        free(temp);
+    }
+}
+
 int main(int ac, char **av)
 {
     t_utils *stack;
@@ -369,6 +379,8 @@ int main(int ac, char **av)
     int i = 1;
     
     if(ac < 2)
+        exit(1);
+    if(check_if_numbers(av, ac) == 0)
         exit(1);
     init_stack(stack);
     while(av[i] != NULL)
@@ -385,6 +397,7 @@ int main(int ac, char **av)
                 aux = aux->next;
             aux->next = new_node;
         }
+        //free(new_node);
         i++;
     }
     t_node *tmp = stack->listA;
@@ -394,17 +407,17 @@ int main(int ac, char **av)
         tmp = tmp->next;
     }
     stack->listA->prev = tmp;
+    //free(tmp);
+    if(check_doubles(stack->listA) == 0)
+        exit(1);
+    if(is_sorted(stack->listA))
+        exit(1);
     if(lstsize(stack->listA) > 5)
         index3(stack);
     else
         simple(stack);
-    /* tmp = stack->listA;
-    while(tmp != NULL){
-        if(tmp->next == NULL)
-            printf("%d!", tmp->value);
-        else
-            printf("%d - ", tmp->value);
-        tmp = tmp->next;
-    } */
+    //free(stack);
+    free_list(stack->listA);
+    free(stack);
     return (1);
 }

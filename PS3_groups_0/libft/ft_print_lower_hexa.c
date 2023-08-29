@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_print_lower_hexa.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:00:58 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/18 13:33:14 by bmota-si         ###   ########.fr       */
+/*   Created: 2022/12/07 11:53:19 by bmota-si          #+#    #+#             */
+/*   Updated: 2023/08/08 15:21:14 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void imprimirA(t_node *node)
+int	ft_print_lower_hexa(unsigned int nb)
 {
-    printf("ListaA:\n");
-    while (node){
-        printf("%d\n", node->value);
-        node = node->next;
-    }
-}
+	char	*hexa_num;
+	int		count;
 
-void imprimirB(t_node *node)
-{
-    printf("ListaB:\n");
-    while (node){
-        printf("%d\n", node->value);
-        node = node->next;
-    }
+	count = 0;
+	hexa_num = "0123456789abcdef";
+	if (nb < 16)
+		count += ft_print_char(hexa_num[nb]);
+	if (nb >= 16)
+	{
+		count += ft_print_lower_hexa(nb / 16);
+		count += ft_print_lower_hexa(nb % 16);
+	}
+	return (count);
 }

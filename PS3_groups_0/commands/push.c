@@ -6,30 +6,47 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:03:44 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/28 00:34:30 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:29:23 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 //PUSH
-void    push(t_node **list_to, t_node **list_from)
+void	push(t_node **stack_to, t_node **stack_from)
 {
-    t_node *aux = malloc(sizeof(t_node));
-    aux = *list_from;
-    insert_top(list_to, aux->value);
-    *list_from = aux->next;
-    //free(aux);
+	t_node	*tmp;
+	t_node	*head_to;
+	t_node	*head_from;
+
+	if (ft_lstsize(*stack_from) == 0)
+		return ;
+	head_to = *stack_to;
+	head_from = *stack_from;
+	tmp = head_from;
+	head_from = head_from->next;
+	*stack_from = head_from;
+	if (!head_to)
+	{
+		head_to = tmp;
+		head_to->next = NULL;
+		*stack_to = head_to;
+	}
+	else
+	{
+		tmp->next = head_to;
+		*stack_to = tmp;
+	}
 }
 
-void    pa(t_utils *stack)
+void	pa(t_utils *stack)
 {
-    push(&stack->listA, &stack->listB);
-    write(1, "pa\n", 3);
+	push(&stack->listA, &stack->listB);
+	write(1, "pa\n", 3);
 }
 
-void    pb(t_utils *stack)
+void	pb(t_utils *stack)
 {
-    push(&stack->listB, &stack->listA);
-    write(1, "pb\n", 3);
+	push(&stack->listB, &stack->listA);
+	write(1, "pb\n", 3);
 }

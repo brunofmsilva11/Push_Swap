@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 13:29:00 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 13:51:32 by bmota-si         ###   ########.fr       */
+/*   Created: 2022/12/05 14:40:23 by bmota-si          #+#    #+#             */
+/*   Updated: 2023/08/08 15:21:17 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Esta funcao adiciona um no ao fim da lista ou 
-seja este no adicionado o next dele tem de ser NULL. */
-
 #include "libft.h"
 
-void	ft_lstadd_back(t_node **lst, t_node *new)
+int	ft_print_str(char *str)
 {
-	if (*lst == NULL)
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (write (1, "(null)", 6));
+	while (str[i])
 	{
-		*lst = new;
-		return ;
+		write(1, &str[i], 1);
+		i++;
 	}
-	if (new == NULL)
-		return ;
-	ft_lstlast(*lst)->next = new;
-	new->next = NULL;
+	return (i);
 }

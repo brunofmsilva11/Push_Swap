@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstsize.c                                          :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 14:21:39 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/18 13:31:59 by bmota-si         ###   ########.fr       */
+/*   Created: 2022/12/06 13:14:47 by bmota-si          #+#    #+#             */
+/*   Updated: 2023/08/08 15:21:13 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int    lstsize(t_node *node)
+int	ft_print_char(int c)
 {
-    int i = 0;
-    while(node != NULL){
-        i++;
-        node = node->next;
-    }
-    return (i);
+	write (1, &c, 1);
+	return (1);
 }

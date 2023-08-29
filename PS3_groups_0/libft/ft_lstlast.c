@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:22:19 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/27 22:36:14 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 16:45:37 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_node	*ft_lstlast(t_node *lst)
 {
 	if (lst == NULL)
 		return (0);

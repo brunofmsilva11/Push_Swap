@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:00:34 by bmota-si          #+#    #+#             */
-/*   Updated: 2022/11/18 17:21:36 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:39:20 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s + i);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main () {
    const char str[] = "42 Cursus\nPortojhhaskjfhajk\nkasjfo";
    const char ch = '\n';
@@ -43,4 +43,4 @@ int main () {
    printf("String after |%c| is - |%s|\n", ch, ret);
    
    return(0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:31:18 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/27 22:35:48 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:55:30 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_node	*ft_lstnew(int content)
 {
-	t_list	*new_node;
+	t_node	*new_node;
 
-	new_node = malloc(sizeof(t_list));
+	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
-	new_node->content = content;
+	new_node->value = content;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -32,9 +32,9 @@ int main()
 {
     char str[] = "42 Porto.";
     char id[] = "1 ano"; 
-    t_list *novo_no;
-    t_list *idade;
-    t_list *head;
+    t_node *novo_no;
+    t_node *idade;
+    t_node *head;
 
     novo_no = ft_lstnew((void *)str);
     idade = ft_lstnew((void *)id);

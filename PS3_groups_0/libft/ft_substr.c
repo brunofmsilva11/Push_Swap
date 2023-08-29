@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:07:33 by bmota-si          #+#    #+#             */
-/*   Updated: 2022/11/18 16:59:33 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:44:30 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[a] = s[start + a];
 		a++;
 	}
-		str[a] = '\0';
+	str[a] = '\0';
 	return (str);
 }
 

@@ -6,67 +6,79 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:27:42 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/25 16:11:39 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 12:42:19 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    swap2(int *a, int *b)
+void	swap2(int *a, int *b)
 {
-    int tmp;
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-void    ordenar(int *array, t_utils *stack)
+void	ordenar(int *array, t_utils *stack)
 {
-    int j = 0;
+	int	j;
 
-    while(j < lstsize(stack->listA))
-    {
-        if((array[j] > array[j + 1]) && (j + 1 < lstsize(stack->listA)))
-        {
-            swap2(&array[j], &array[j + 1]);
-            j = 0;
-        }
-        else
-            j++;
-    }
+	j = 0;
+	while (j < ft_lstsize(stack->listA) - 1)
+	{
+		if ((array[j] > array[j + 1]) && (j - 1 < ft_lstsize(stack->listA)))
+		{
+			swap2(&array[j], &array[j + 1]);
+			j = 0;
+		}
+		else
+			j++;
+	}
 }
 
-void    print_array(int *array)
+void	ft_index(int *array, t_utils *stack)
 {
-    int j = 0;
-    while(array[j]){
-        printf("%i - ", array[j]);
-        j++;
-    }
-    printf("\n");
+	t_node	*aux;
+	int		i;
+
+	aux = stack->listA;
+	while (aux)
+	{
+		i = 0;
+		while (array)
+		{
+			if (aux->value == array[i])
+			{
+				aux->value = i;
+				break ;
+			}
+			i++;
+		}
+		aux = aux->next;
+	}
 }
 
-/* int main(int ac, char **av)
+void	index3(t_utils *stack)
 {
-    int *array;
-    int i = 1;
-    int j = 0;
+	t_node	*aux;
+	int		*array;
+	int		i;
 
-    array = malloc(sizeof(int) * ac);
-    
-    if(ac > 1)
-    {
-        while(av[i])
-        {
-            array[j] = atoi(av[i]);
-            i++;
-            j++;
-        }
-    }
-    print_array(array);
-    ordenar(array);
-    printf("\n");
-    print_array(array);
-    
-    return (0);
-} */
+	aux = stack->listA;
+	array = malloc(sizeof(int) * (ft_lstsize(stack->listA)));
+	i = 0;
+	while (aux)
+	{
+		array[i] = aux->value;
+		aux = aux->next;
+		i++;
+	}
+	ordenar(array, stack);
+	ft_index(array, stack);
+	get_min(stack);
+	get_max(stack);
+	ft_alg2(stack);
+	free(array);
+}

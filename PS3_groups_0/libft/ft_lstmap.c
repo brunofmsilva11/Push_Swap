@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:26:17 by bmota-si          #+#    #+#             */
-/*   Updated: 2022/11/18 17:19:41 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:44:47 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ criando assim uma nova lista. */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*))
+t_node	*ft_lstmap(t_node *lst, void *(*f)(void *), void (*del)(void*))
 {
-	t_list	*temp;
-	t_list	*new;
+	t_node	*temp;
+	t_node	*new;
 	int		size;
 
 	(void)del;
@@ -38,7 +38,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*))
 		{
 			ft_lstclear(&temp, del);
 			return (0);
-		}	
+		}
 		ft_lstadd_back(&temp, new);
 		lst = lst->next;
 	}

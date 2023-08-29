@@ -60,8 +60,10 @@ int	main(int ac, char **av)
 	init_stack(stack);
 	create_list(stack, av);
 	if (is_sorted(stack->list_a))
-		exit (1);
-	if (ft_lstsize(stack->list_a) > 5)
+	{
+		free_list(stack);
+	}
+	else if (ft_lstsize(stack->list_a) > 5)
 		index3(stack);
 	else
 		simple(stack);

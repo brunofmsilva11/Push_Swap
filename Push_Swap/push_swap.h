@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:58:55 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 16:30:38 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:08:51 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	init_stack(t_utils *stack);
 void	check_list(char **av, int ac);
 int		is_sorted(t_node *list);
 void	check_if_numbers(char **av, int len);
-int		check_doubles(char **av);
+void	check_doubles(char **av, int len);
 
 //verification.c
 int		verification_a(t_utils *stack, int num);

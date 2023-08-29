@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 12:26:58 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 15:00:03 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:31:54 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	init_stack(t_utils *stack)
 {
-	stack->listA = NULL;
-	stack->listB = NULL;
+	stack->list_a = NULL;
+	stack->list_b = NULL;
 	stack->max_bits = 0;
 	stack->max = 0;
 	stack->min = 0;
@@ -70,7 +70,7 @@ void	check_if_numbers(char **av, int len)
 
 int	check_doubles(char **av)
 {
-	int	i;
+	int		i;
 	long	num;
 	long	num2;
 
@@ -78,7 +78,7 @@ int	check_doubles(char **av)
 	while (av[i + 1])
 	{
 		num = ft_atol(av[i]);
-		num2 = ft_atol(av[i + 1]);	
+		num2 = ft_atol(av[i + 1]);
 		if (num == num2 || num > INT_MAX || num < INT_MIN)
 		{
 			ft_printf("Error\n");

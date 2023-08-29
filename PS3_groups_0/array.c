@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:27:42 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 12:42:19 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:27:52 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ordenar(int *array, t_utils *stack)
 	int	j;
 
 	j = 0;
-	while (j < ft_lstsize(stack->listA) - 1)
+	while (j < ft_lstsize(stack->list_a) - 1)
 	{
-		if ((array[j] > array[j + 1]) && (j - 1 < ft_lstsize(stack->listA)))
+		if ((array[j] > array[j + 1]) && (j - 1 < ft_lstsize(stack->list_a)))
 		{
 			swap2(&array[j], &array[j + 1]);
 			j = 0;
@@ -43,7 +43,7 @@ void	ft_index(int *array, t_utils *stack)
 	t_node	*aux;
 	int		i;
 
-	aux = stack->listA;
+	aux = stack->list_a;
 	while (aux)
 	{
 		i = 0;
@@ -66,8 +66,8 @@ void	index3(t_utils *stack)
 	int		*array;
 	int		i;
 
-	aux = stack->listA;
-	array = malloc(sizeof(int) * (ft_lstsize(stack->listA)));
+	aux = stack->list_a;
+	array = malloc(sizeof(int) * (ft_lstsize(stack->list_a)));
 	i = 0;
 	while (aux)
 	{

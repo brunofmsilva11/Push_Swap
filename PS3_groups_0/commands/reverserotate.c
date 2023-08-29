@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:03:27 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/28 23:37:02 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:29:37 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ void	reverse_rotate(t_node **stack)
 
 void	rra(t_utils *stack)
 {
-	reverse_rotate(&stack->listA);
+	reverse_rotate(&stack->list_a);
 	write(1, "rra\n", 4);
 }
 
 void	rrb(t_utils *stack)
 {
-	reverse_rotate(&stack->listB);
+	reverse_rotate(&stack->list_b);
 	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_utils *stack)
 {
-	reverse_rotate(&stack->listA);
-	reverse_rotate(&stack->listB);
+	reverse_rotate(&stack->list_a);
+	reverse_rotate(&stack->list_b);
 	write(1, "rrr\n", 4);
 }
 

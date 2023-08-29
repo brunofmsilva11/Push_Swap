@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:54:52 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 11:42:02 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:28:10 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_3(t_utils *stack)
 	t_node	*tmp;
 	int		next_min;
 
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	get_min(stack);
 	next_min = get_next_min(stack);
 	if (tmp->value == next_min && tmp->next->value == stack->min)
@@ -45,7 +45,7 @@ void	sort_4(t_utils *stack)
 {
 	int	distance;
 
-	if (is_sorted(stack->listA))
+	if (is_sorted(stack->list_a))
 		return ;
 	get_min(stack);
 	distance = get_distance(stack);
@@ -60,7 +60,7 @@ void	sort_4(t_utils *stack)
 	{
 		rra(stack);
 	}
-	if (is_sorted(stack->listA))
+	if (is_sorted(stack->list_a))
 		return ;
 	pb(stack);
 	sort_3(stack);
@@ -87,7 +87,7 @@ void	sort_5(t_utils *stack)
 	}
 	else if (distance == 5)
 		rra(stack);
-	if (is_sorted(stack->listA))
+	if (is_sorted(stack->list_a))
 		return ;
 	pb(stack);
 	sort_4(stack);
@@ -98,8 +98,8 @@ void	simple(t_utils *stack)
 {
 	int	size;
 
-	size = ft_lstsize(stack->listA);
-	if (is_sorted(stack->listA) || size < 2)
+	size = ft_lstsize(stack->list_a);
+	if (is_sorted(stack->list_a) || size < 2)
 		return ;
 	if (size == 2)
 		sa(stack);

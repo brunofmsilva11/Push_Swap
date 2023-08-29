@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:58:55 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 14:39:52 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:30:38 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,17 @@
 # include <limits.h>
 # include "libft/libft.h"
 
-/*typedef struct s_node{
-    int value;
-    struct s_node *prev;
-    struct s_node *next;
-}t_node;*/
-
 typedef struct s_utils
 {
-	t_node *listA;
-	t_node *listB;
-	int *array;
-	int max_bits;
-	int max;
-	int min;
-	int max_b;
-	int third;
-}t_utils;
+	t_node	*list_a;
+	t_node	*list_b;
+	int		*array;
+	int		max_bits;
+	int		max;
+	int		min;
+	int		max_b;
+	int		third;
+}				t_utils;
 
 /*array.c*/
 void	swap2(int *a, int *b);
@@ -54,16 +48,16 @@ void	get_max_b(t_utils *stack);
 int		get_distance(t_utils *stack);
 
 //main.c
-void    put_prev(t_node *list);
+void	put_prev(t_node *list);
 void	create_list(t_utils *stack, char **av);
 int		main(int ac, char **av);
 
 //push_swap.c
-void    all(t_utils *stack, int num);
-void    last(t_utils *stack, int num);
-int     index_max_b(t_utils *stack);
-void    move_to_a(t_utils *stack);
-void    ft_alg2(t_utils *stack);
+void	all(t_utils *stack, int num);
+void	last(t_utils *stack, int num);
+int		index_max_b(t_utils *stack);
+void	move_to_a(t_utils *stack);
+void	ft_alg2(t_utils *stack);
 
 //simple_sort
 void	sort_3(t_utils *stack);
@@ -79,31 +73,31 @@ void	check_if_numbers(char **av, int len);
 int		check_doubles(char **av);
 
 //verification.c
-int    	verification_a(t_utils *stack, int num);
-void    verification_b(t_utils *stack, int num);
+int		verification_a(t_utils *stack, int num);
+void	verification_b(t_utils *stack, int num);
 
 //commands/push.c
-void    push(t_node **stack_to, t_node **stack_from);
-void    pa(t_utils *stack);
-void    pb(t_utils *stack);
+void	push(t_node **stack_to, t_node **stack_from);
+void	pa(t_utils *stack);
+void	pb(t_utils *stack);
 
 //commands/reverserotate.c
-void    reverse_rotate(t_node **stack);
-void    rra(t_utils *stack);
-void    rrb(t_utils *stack);
-void    rrr(t_utils *stack);
-void    remove_node(t_node **t_node, int num);
+void	reverse_rotate(t_node **stack);
+void	rra(t_utils *stack);
+void	rrb(t_utils *stack);
+void	rrr(t_utils *stack);
+void	remove_node(t_node **t_node, int num);
 
 //commands/rotate.c
-void    rotate(t_node **stack);
-void    ra(t_utils *stack);
-void    rb(t_utils *stack);
-void    rr(t_utils *stack);
+void	rotate(t_node **stack);
+void	ra(t_utils *stack);
+void	rb(t_utils *stack);
+void	rr(t_utils *stack);
 
 //commands/swap
-void    swap(t_node *t_node);
-void    sa(t_utils *stack);
-void    sb(t_utils *stack);
-void    ss(t_utils *stack);
+void	swap(t_node *t_node);
+void	sa(t_utils *stack);
+void	sb(t_utils *stack);
+void	ss(t_utils *stack);
 
 #endif

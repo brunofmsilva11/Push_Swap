@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:03:44 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/28 23:29:23 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:29:35 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ void	push(t_node **stack_to, t_node **stack_from)
 
 void	pa(t_utils *stack)
 {
-	push(&stack->listA, &stack->listB);
+	push(&stack->list_a, &stack->list_b);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_utils *stack)
 {
-	push(&stack->listB, &stack->listA);
+	push(&stack->list_b, &stack->list_a);
 	write(1, "pb\n", 3);
 }

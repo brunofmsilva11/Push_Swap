@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:52:44 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 00:14:28 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:31:24 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	get_next_min(t_utils *stack)
 	t_node	*tmp;
 	int		next_min;
 
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	next_min = 0;
 	if (tmp->value == stack->min)
 	{
@@ -44,7 +44,7 @@ void	get_min(t_utils *stack)
 {
 	t_node	*tmp;
 
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	stack->min = tmp->value;
 	while (tmp->next)
 	{
@@ -58,7 +58,7 @@ void	get_max(t_utils *stack)
 {
 	t_node	*tmp;
 
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	stack->max = tmp->value;
 	while (tmp->next)
 	{
@@ -72,7 +72,7 @@ void	get_max_b(t_utils *stack)
 {
 	t_node	*tmp;
 
-	tmp = stack->listB;
+	tmp = stack->list_b;
 	stack->max_b = tmp->value;
 	while (tmp->next)
 	{
@@ -82,13 +82,12 @@ void	get_max_b(t_utils *stack)
 	}
 }
 
-//esta funcao serve para listas de 4 elementos para descobrir a pos minimo e depois passar o minimo para primeiro da lista e envia-lo para a listaB usar sort_3 e returnar o min
 int	get_distance(t_utils *stack)
 {
 	t_node	*tmp;
 	int		pos;
 
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	pos = 1;
 	while (tmp)
 	{

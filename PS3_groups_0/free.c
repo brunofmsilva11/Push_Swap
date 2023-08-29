@@ -16,18 +16,18 @@ void	free_list(t_utils *stack)
 {
 	t_node	*temp;
 
-	while (stack->listA != NULL)
+	while (stack->list_a != NULL)
 	{
-		temp = stack->listA;
-		stack->listA = stack->listA->next;
+		temp = stack->list_a;
+		stack->list_a = stack->list_a->next;
 		free (temp);
 	}
-	free (stack->listA);
-	while (stack->listB != NULL)
+	free (stack->list_a);
+	while (stack->list_b != NULL)
 	{
-		temp = stack->listB;
-		stack->listB = stack->listB->next;
+		temp = stack->list_b;
+		stack->list_b = stack->list_b->next;
 		free (temp);
 	}
-	free (stack->listB);
+	free (stack->list_b);
 }

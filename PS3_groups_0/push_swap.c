@@ -16,10 +16,11 @@ void	all(t_utils *stack, int num)
 {
 	int	pos;
 
-	while (ft_lstsize(stack->listA) > ((stack->max + 1) - (num * stack->third)))
+	while (ft_lstsize(stack->list_a) > 
+		((stack->max + 1) - (num * stack->third)))
 	{
 		pos = verification_a(stack, num);
-		if (stack->listA->value < (num * stack->third))
+		if (stack->list_a->value < (num * stack->third))
 		{
 			pb(stack);
 			verification_b(stack, num);
@@ -27,10 +28,10 @@ void	all(t_utils *stack, int num)
 		else
 		{
 			if (pos == 1)
-				while (stack->listA->value >= (num * stack->third))
+				while (stack->list_a->value >= (num * stack->third))
 					ra(stack);
 			else
-				while (stack->listA->value >= (num * stack->third))
+				while (stack->list_a->value >= (num * stack->third))
 					rra(stack);
 		}
 	}
@@ -38,9 +39,9 @@ void	all(t_utils *stack, int num)
 
 void	last(t_utils *stack, int num)
 {
-	while (ft_lstsize(stack->listA) > 3)
+	while (ft_lstsize(stack->list_a) > 3)
 	{
-		if (stack->listA->value <= (stack->max - 3))
+		if (stack->list_a->value <= (stack->max - 3))
 		{
 			pb(stack);
 			verification_b(stack, num);
@@ -48,11 +49,11 @@ void	last(t_utils *stack, int num)
 		else
 			ra(stack);
 	}
-	if (ft_lstsize(stack->listA) < 3 && !is_sorted(stack->listA))
+	if (ft_lstsize(stack->list_a) < 3 && !is_sorted(stack->list_a))
 	{
 		sa(stack);
 	}
-	else if (ft_lstsize(stack->listA) == 3 && !is_sorted(stack->listA))
+	else if (ft_lstsize(stack->list_a) == 3 && !is_sorted(stack->list_a))
 		sort_3(stack);
 }
 
@@ -61,7 +62,7 @@ int	index_max_b(t_utils *stack)
 	t_node	*tmp;
 	int		i;
 
-	tmp = stack->listB;
+	tmp = stack->list_b;
 	i = 1;
 	while (tmp->value != stack->max_b)
 	{
@@ -76,25 +77,25 @@ void	move_to_a(t_utils *stack)
 	int	pos;
 
 	pos = 0;
-	while (ft_lstsize(stack->listB) || 
-		(!is_sorted(stack->listA) && !is_sorted(stack->listB)))
+	while (ft_lstsize(stack->list_b) || 
+		(!is_sorted(stack->list_a) && !is_sorted(stack->list_b)))
 	{
 		get_max_b(stack);
 		pos = index_max_b(stack);
-		if (pos > (ft_lstsize(stack->listB) / 2))
+		if (pos > (ft_lstsize(stack->list_b) / 2))
 		{
-			while (stack->listB->value != stack->max_b)
+			while (stack->list_b->value != stack->max_b)
 				rrb(stack);
 			pa(stack);
 		}
 		else
 		{
-			while (stack->listB->value != stack->max_b)
+			while (stack->list_b->value != stack->max_b)
 				rb(stack);
 			pa(stack);
 		}
 	}
-	while (ft_lstsize(stack->listB))
+	while (ft_lstsize(stack->list_b))
 		pa(stack);
 }
 

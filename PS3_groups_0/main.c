@@ -30,23 +30,23 @@ void	create_list(t_utils *stack, char **av)
 	t_node	*new_node;
 	t_node	*tmp;
 	int		value;
-	int 	i;
+	int		i;
 
 	i = 1;
 	while (av[i] != NULL)
 	{
 		value = ft_atol(av[i]);
 		new_node = ft_lstnew(value);
-		ft_lstadd_back(&stack->listA, new_node);
+		ft_lstadd_back(&stack->list_a, new_node);
 		i++;
 	}
-	tmp = stack->listA;
+	tmp = stack->list_a;
 	while (tmp->next)
 	{
 		tmp->next->prev = tmp;
 		tmp = tmp->next;
 	}
-	stack->listA->prev = tmp;
+	stack->list_a->prev = tmp;
 }
 
 int	main(int ac, char **av)
@@ -59,9 +59,9 @@ int	main(int ac, char **av)
 	stack = malloc(sizeof(t_utils));
 	init_stack(stack);
 	create_list(stack, av);
-	if(is_sorted(stack->listA))
+	if (is_sorted(stack->list_a))
 		exit (1);
-	if (ft_lstsize(stack->listA) > 5)
+	if (ft_lstsize(stack->list_a) > 5)
 		index3(stack);
 	else
 		simple(stack);

@@ -19,8 +19,8 @@ int	verification_a(t_utils *stack, int num)
 	int		i;
 	int		k;
 
-	aux = stack->listA;
-	tmp = stack->listA;
+	aux = stack->list_a;
+	tmp = stack->list_a;
 	put_prev(aux);
 	k = 1;
 	i = 1;
@@ -42,9 +42,9 @@ int	verification_a(t_utils *stack, int num)
 
 void	verification_b(t_utils *stack, int num)
 {
-	if (ft_lstsize(stack->listB) > 1)
+	if (ft_lstsize(stack->list_b) > 1)
 	{
-		if (stack->listB->value <= ((stack->third * num) - (stack->third / 2)))
+		if (stack->list_b->value <= ((stack->third * num) - (stack->third / 2)))
 			rb(stack);
 	}
 }

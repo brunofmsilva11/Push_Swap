@@ -6,7 +6,7 @@
 /*   By: bmota-si <bmota-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:58:55 by bmota-si          #+#    #+#             */
-/*   Updated: 2023/08/29 17:08:51 by bmota-si         ###   ########.fr       */
+/*   Updated: 2023/08/30 11:49:36 by bmota-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	swap2(int *a, int *b);
 void	ordenar(int *array, t_utils *stack);
 void	ft_index(int *array, t_utils *stack);
 void	index3(t_utils *stack);
+
+//check.c
+void	check_list(char **av, int ac);
+void	check_signals(char **av, int len);
+void	check_if_numbers(char **av, int len);
+void	check_doubles(char **av, int len);
 
 //free.c
 void	free_list(t_utils *stack);
@@ -67,10 +73,7 @@ void	simple(t_utils *stack);
 
 //utils.c
 void	init_stack(t_utils *stack);
-void	check_list(char **av, int ac);
 int		is_sorted(t_node *list);
-void	check_if_numbers(char **av, int len);
-void	check_doubles(char **av, int len);
 
 //verification.c
 int		verification_a(t_utils *stack, int num);

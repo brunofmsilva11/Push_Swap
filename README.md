@@ -1,6 +1,6 @@
 # push_swap
 
-**push_swap** is a project developed at 42, an innovative programming school. The goal of this project is to sort a stack of integers with a limited set of operations, using the least number of moves possible. This project teaches fundamental concepts of algorithm design, optimization, and complexity analysis.
+**push_swap** is a project developed at 42. The goal of this project is to sort a stack of integers with a limited set of operations, using the least number of moves possible. This project teaches fundamental concepts of algorithm design, optimization, and complexity analysis.
 
 ## Project Objectives
 
@@ -26,5 +26,4 @@ You are provided with two stacks, `a` and `b`, and a set of operations to manipu
 - `rrr` : `rra` and `rrb` at the same time.
 
 ## How to use
-./push_swap <list of integers>
-Exemple:
+

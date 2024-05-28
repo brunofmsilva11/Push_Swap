@@ -26,4 +26,7 @@ You are provided with two stacks, `a` and `b`, and a set of operations to manipu
 - `rrr` : `rra` and `rrb` at the same time.
 
 ## How to use
+![Screencastfrom28-05-2024130111-ezgif com-video-to-gif-converter](https://github.com/brunofmsilva11/Push_Swap/assets/117391049/e1f9c1f8-def4-4d1c-ab03-4f818228244b)
+
+
 

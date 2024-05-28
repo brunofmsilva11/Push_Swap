@@ -28,5 +28,5 @@ You are provided with two stacks, `a` and `b`, and a set of operations to manipu
 ## How to use
 ![Screencastfrom28-05-2024130111-ezgif com-video-to-gif-converter](https://github.com/brunofmsilva11/Push_Swap/assets/117391049/e1f9c1f8-def4-4d1c-ab03-4f818228244b)
 
-
+![Screencastfrom28-05-2024190144-ezgif com-video-to-gif-converter](https://github.com/brunofmsilva11/Push_Swap/assets/117391049/a55b4905-0dc4-4a92-b109-6129561691e5)
 
